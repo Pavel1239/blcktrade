@@ -6,7 +6,7 @@
         $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
         while($row = mysqli_fetch_array($result))
         {
-            echo "<li><a href=\"\">".$row['brand']."</a></li><br>";
+            echo "<li><a href='/?brand=".$row['brand']."'>".$row['brand']."</a></li><br>";
         }
         ?>
         <li><a href="">contact us</a></li>

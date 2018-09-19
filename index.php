@@ -15,7 +15,14 @@ include ("include/head.php")
     <div class="main">
 
       <?php
-      $query = "SELECT * FROM clothes ORDER BY id DESC";
+      $brand = $_GET['brand'];
+
+      if($brand!='') {
+         $query = "SELECT * FROM clothes WHERE brand = '$brand' ORDER BY id DESC";
+       } else {
+         $query = "SELECT * FROM clothes ORDER BY id DESC ";
+       }
+
       $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
       while($row = mysqli_fetch_array($result))
       {
